@@ -66,13 +66,17 @@ END_DURATION = 300  # 5 seconds
 # ================== LOAD FRAMES ==================
 def load_frames(folder_name):
     frames = []
-    folder = os.path.join(BASE_DIR, folder_name)
-    if os.path.exists(folder):
-        for f in sorted(os.listdir(folder)):
-            if f.endswith(".png"):
-                img = pygame.image.load(os.path.join(folder, f)).convert_alpha()
-                img = pygame.transform.scale(img, (WIDTH, HEIGHT))
-                frames.append(img)
+    base_folder = os.path.join(BASE_DIR, folder_name)
+    if os.path.exists(base_folder):
+        # loop over all subfolders
+        for subfolder in sorted(os.listdir(base_folder)):
+            sub_path = os.path.join(base_folder, subfolder)
+            if os.path.isdir(sub_path):
+                for f in sorted(os.listdir(sub_path)):
+                    if f.endswith(".png"):
+                        img = pygame.image.load(os.path.join(sub_path, f)).convert_alpha()
+                        img = pygame.transform.scale(img, (WIDTH, HEIGHT))
+                        frames.append(img)
     print(folder_name, "frames loaded:", len(frames))
     return frames
 
@@ -482,3 +486,4 @@ while True:
         name_input_screen()
         reset_game()
         run_game_loop()
+
