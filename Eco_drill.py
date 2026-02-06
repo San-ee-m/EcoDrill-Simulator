@@ -282,7 +282,7 @@ def name_input_screen():
                     if len(text) < 12:
                         text += e.unicode
         screen.fill(GRAY)
-        screen.blit(title_font.render("Enter Your Name", True, WHITE), (160, 130))
+        screen.blit(title_font.render("Enter Your Name", True, WHITE), (150, 130))
         pygame.draw.rect(screen, color, input_box, 2)
         screen.blit(font.render(text, True, WHITE), (input_box.x+5, input_box.y+8))
         pygame.display.flip()
@@ -486,4 +486,5 @@ while True:
         name_input_screen()
         reset_game()
         run_game_loop()
+
 
