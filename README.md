@@ -48,7 +48,12 @@ Entries are stored locally in `leaderboard.json`.
 
 A helper script to split a spritesheet into individual frames for your game.
 
-**Usage:**
+## 🧠 Tech Stack
+- Python
+- Pygame
+- JSON (local persistence)
 
+## ▶️ How to Run
 ```bash
-python tools/extract.py path/to/spritesheet.png output/folder frame_width frame_height
+pip install pygame
+python Eco_drill.py
