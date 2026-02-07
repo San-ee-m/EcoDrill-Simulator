@@ -1,8 +1,8 @@
 import cv2
 import os
 
-video_path = "rig_drill(2).mp4"
-output_folder = "RigDrillFrames"
+video_path = "rig_drill.mp4" # This was the name of the video that got extracted
+output_folder = "RigDrillFrames" 
 
 os.makedirs(output_folder, exist_ok=True)
 
@@ -17,4 +17,5 @@ while True:
     frame_num += 1
 
 cap.release()
+
 print("Done:", frame_num, "frames")
